@@ -30,13 +30,17 @@ html,body{
     background-position: 50% 50%;
 }
 
-.login-form{
+.hidden{
+    display: none !important;
+}
+
+.form{
     position: absolute;
     right: 15%;
     top: 40%;
 }
 
-.login-form input {
+.form input {
     display: block;
     font-size: 18px;
     padding: 20px 10px;
@@ -47,20 +51,20 @@ html,body{
     border: none;
 }
 
-.login-form input[type="text"],.login-form input[type="password"]{
+.form input[type="text"],.form input[type="password"]{
     background: #fff;
     color: rgb(36, 32, 32);
     border: 2px solid #fff;
 }
 
-.login-form input[type="button"]{
+.form input[type="button"]{
     cursor: pointer;
     background: #3a1c14;
     color: #fff;
     padding: 15px;
 }
 
-.login-form .helper{
+.form .helper{
     color: #555;
     font-size: 15px;
     text-align: right;
@@ -68,6 +72,15 @@ html,body{
     margin: 10px 0;
 }
 
-.login-form .helper:hover{
+.form .helper:hover{
     text-decoration: underline;
+}
+
+@keyframes fadein {
+    from {top: 45%; opacity: 0}
+    to {top: 40%; opacity: 1}
+}
+
+.delayed-fadein{
+    animation: fadein 500ms linear forwards;
 }

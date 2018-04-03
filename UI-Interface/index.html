@@ -8,13 +8,24 @@
     <title>NB-Aadhar</title>
 </head>
 <body>
-    <div class="bg-fullscreen">
-        <div class="login-form delayed-fadein">
+    <div class="bg-fullscreen hidden" id="bg-intro">
+        <div class="login-form form delayed-fadein" id="login-form">
             <input type="text" name="l_u" placeholder="Username">
             <input type="password" name="l_p" placeholder="Password">
-            <input type="button" value="Login">
-            <div class="helper">New User?</div>
+            <input type="button" value="Login" onclick="login()">
+            <div class="helper" onclick="toggleform('login')">New User?</div>
         </div>
+        <div class="signup-form form hidden delayed-fadein" id="signup-form">
+            <input type="text" name="s_u" placeholder="Username">
+            <input type="text" name="s_a" placeholder="Aadhar Number">
+            <input type="password" name="s_p" placeholder="Password">
+            <input type="password" name="s_r_p" placeholder="Re-confirm Password">
+            <input type="button" value="Signup">
+            <div class="helper" onclick="toggleform('signup')">Already A User?</div>
+        </div>
+    </div>
+    <div class="intro-screen" id="dashboard">
+        
     </div>
     <script src="./assets/js/nb-aadhar.js"></script>
 </body>
