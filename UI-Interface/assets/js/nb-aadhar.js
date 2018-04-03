@@ -40,3 +40,27 @@ var login = function() {
     addClass($$byId("bg-intro"), "hidden");
     removeClass($$byId("dashboard"), "hidden");
 }
+
+$Router.config([
+    {path:'register',templateUrl:'partial/register.html'},
+    {path:'reportMissing',templateUrl:'partial/reportMissing.html'},
+    {path:'track',templateUrl:'partial/track.html'},
+    {otherwise:'register'}
+],{
+    activateLinks: false
+});
+
+var trySubmit = function(){
+    var fd = new FormData($("#form")[0]);
+
+    $.ajax({
+    url: 'http://localhost:9090/api/upload/files',
+    data: fd,
+    processData: false,
+    contentType: false,
+    type: 'POST',
+    success: function(data){
+        alert(data);
+    }
+    });
+}

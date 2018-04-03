@@ -84,3 +84,51 @@ html,body{
 .delayed-fadein{
     animation: fadein 500ms linear forwards;
 }
+
+.navbar{
+    background: #3a1c14;
+    color: #fff;
+    font-size: 25px;
+}
+
+.navbar .brand{
+    padding: 15px;
+    float: left;
+}
+
+.navbar .logout{
+    padding: 15px;
+    float: right;
+    cursor: pointer;
+    background: #39cfff;
+    color: #3a1c14;
+}
+
+.navbar:after,.navbar:before{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+[router-outlet]{
+    padding: 50px 15px;
+    display: flex;
+}
+
+.btn_holder{
+    padding: 15px;
+}
+
+.card{
+    background: #fff;
+    padding: 20px;
+    display: inline-block;
+    box-shadow: 1px 0 3px 1px #ddd;
+    border-radius: 2px;
+    margin: 0 5px 0 0 ;
+    cursor: pointer;
+}
+
+.card.active{
+    border-bottom: 2px solid #39c;
+}
