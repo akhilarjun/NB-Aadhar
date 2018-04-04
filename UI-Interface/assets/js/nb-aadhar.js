@@ -37,8 +37,13 @@ var toggleform = function(currentForm){
 }
 
 var login = function() {
-    addClass($$byId("bg-intro"), "hidden");
-    removeClass($$byId("dashboard"), "hidden");
+    $("#bg-intro").addClass("hidden");
+    $("#dashboard").removeClass("hidden");
+}
+
+var logout = function() {
+    $("#bg-intro").removeClass("hidden");
+    $("#dashboard").addClass("hidden");
 }
 
 $Router.config([
