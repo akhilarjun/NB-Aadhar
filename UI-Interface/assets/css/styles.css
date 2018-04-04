@@ -34,7 +34,7 @@ html,body{
     display: none !important;
 }
 
-.form{
+.form.login-form, .form.signup-form{
     position: absolute;
     right: 15%;
     top: 40%;
@@ -62,6 +62,40 @@ html,body{
     background: #3a1c14;
     color: #fff;
     padding: 15px;
+}
+
+.form input[type="button"].success{
+    background: #208628;
+}
+
+.form input[type="button"].error{
+    background: #c44;
+}
+
+.form input[type="button"].warning{
+    background: #ea9412;
+}
+
+.form input[type="file"]{
+    opacity: 0;
+    height: 0; width: 0;
+    padding: 0;
+}
+
+.form input[type="file"] + label{
+    width: 400px;
+    padding: 20px 10px;
+    display: inline-block;
+    text-align: center;
+    background: #cecece;
+    color: #6f6f6f;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form input[type="file"] + label.files-added{
+    background: #3cb96e;
+    color: #eee;
 }
 
 .form .helper{

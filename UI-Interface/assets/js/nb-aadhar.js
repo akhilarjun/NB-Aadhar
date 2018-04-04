@@ -47,20 +47,41 @@ $Router.config([
     {path:'track',templateUrl:'partial/track.html'},
     {otherwise:'register'}
 ],{
-    activateLinks: false
+    activateLinks: false,
+    afterRouteChange: function(){
+        $('#filearray').on('change', function(e){
+            var fileName = '';
+		    if(this.files)
+                fileName = e.target.value.split( '\\' ).pop();
+            var idxDot = fileName.lastIndexOf(".") + 1;
+            var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+            if(fileName.trim()){
+                if (extFile=="jpg" || extFile=="jpeg"){
+                    $('#fileArrayLabel')[0].innerHTML = fileName;
+                    $('#fileArrayLabel').addClass('files-added');
+                }else{
+                    alert("Only jpg/jpeg files are allowed!");
+                }
+            }
+        });
+    }
 });
 
-var trySubmit = function(){
-    var fd = new FormData($("#form")[0]);
+var navigateTo = function(hashToGo){
+    $Router.go(hashToGo);
+}
+
+var submitNewRegistry = function(){
+    var fd = new FormData($("#newRegistryForm")[0]);
 
     $.ajax({
-    url: 'http://localhost:9090/api/upload/files',
-    data: fd,
-    processData: false,
-    contentType: false,
-    type: 'POST',
-    success: function(data){
-        alert(data);
-    }
+        url: 'http://localhost:9090/api/upload/files',
+        data: fd,
+        processData: false,
+        contentType: false,
+        type: 'POST',
+        success: function(data){
+            alert(data);
+        }
     });
 }

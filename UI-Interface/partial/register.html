@@ -1,9 +1,8 @@
-<style>
-</style>
-<form id="form">
-    <input type="text" name="motherAadhar">
-    <input type="text" name="fatherAadhar">
-    <input type="text" name="birthPlace">
-    <input type="file" name="files" id="filearray">
-    <input type="button" value="Submit" onclick="trySubmit()">
+<form id="newRegistryForm" class="form" style="margin:auto;">
+    <input type="text" name="motherAadhar" placeholder="Mother's Aadhar">
+    <input type="text" name="fatherAadhar" placeholder="Father's Aadhar">
+    <input type="text" name="birthPlace" placeholder="Birthplace">
+    <input type="file" name="files" id="filearray" accept="image/jpeg">
+    <label for="filearray" id="fileArrayLabel">Chose Scanned Images</label>
+    <input type="button" class="success" value="Submit" onclick="submitNewRegistry()">
 </form>
